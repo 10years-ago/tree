@@ -1,3 +1,4 @@
+import Head from 'next/Head'
 import DecisionTree from 'decision-tree'
 import { useState } from 'react'
 // 訓練的數據

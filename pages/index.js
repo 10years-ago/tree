@@ -1,5 +1,5 @@
 import { useState } from 'react'
-const DecisionTree = require('decision-tree')
+const DecisionTree = require('../lib/decision-tree')
 // 訓練的數據
 // const trainingData = [
 //   { food: '燒鴨飯', drinks: '檸檬茶', liked: true },

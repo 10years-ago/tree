@@ -199,7 +199,7 @@ export default function Home () {
                 <input
                   className='w-1/4 px-1 border-black border-2 mx-1'
                   value={addTrainingData[2]}
-                  onChange={e => setAddTrainingData([addTrainingData[0], addTrainingData[1], e.target.value])}
+                  onChange={e => setAddTrainingData([addTrainingData[0], addTrainingData[1], Number(e.target.value)])}
                 />
                 <button
                   className='w-1/4 bg-blue-700 hover:bg-blue-600 text-white border-gray-400'

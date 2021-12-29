@@ -69,6 +69,7 @@ export default function Home () {
   const [temVail, setTemVail] = useState(['', '', '', '', ''])
   // 用來預測的數據標籤
   const [features, setFeatures] = useState(['building_num', 'has_old_people', 'has_child', 'floor_num', 'is_usual_residence'])
+  const [delFeatures, setDelFeatures] = useState([])
   const [className, setClassName] = useState('voted')
   // 判定結果的列
   // const className = 'liked'
@@ -190,9 +191,41 @@ export default function Home () {
             樣本準確性: {accuracy * 100}%
           </h3>
           <h3 className='text-xl font-bold pb-10'>
-            樣本標籤列:
+            樣本標籤列:點擊可去除該選擇的表前列
             {
-              features.map((item, index) => { return <span key={index}>{item}、</span> })
+              features.map((item, index) => {
+                const featuresIndex = index
+                return (
+                  <p
+                    key={featuresIndex}
+                    onClick={() => {
+                      setFeatures([...features.filter((item, index) => index !== featuresIndex)])
+                      setDelFeatures([...delFeatures, item])
+                    }}
+                  >
+                    {item}
+                  </p>
+                )
+              })
+            }
+          </h3>
+          <h3 className='text-xl font-bold pb-10'>
+            不需要的標籤列:
+            {
+              delFeatures.map((item, index) => {
+                const delFeaturesIndex = index
+                return (
+                  <p
+                    key={delFeaturesIndex}
+                    onClick={() => {
+                      setFeatures([...features, item])
+                      setDelFeatures([...delFeatures.filter((item, index) => index !== delFeaturesIndex)])
+                    }}
+                  >
+                    {item}
+                  </p>
+                )
+              })
             }
           </h3>
           <h3 className='text-xl font-bold pb-10'>

@@ -68,9 +68,9 @@ export default function Home () {
 
   const [temVail, setTemVail] = useState(['', '', '', '', ''])
   // 用來預測的數據標籤
-  const [features, setFeatures] = useState(['building_num', 'has_old_people', 'has_child', 'floor_num', 'is_usual_residence'])
+  const [features, setFeatures] = useState(['暫無訓練的數據'])
   const [delFeatures, setDelFeatures] = useState([])
-  const [className, setClassName] = useState('voted')
+  const [className, setClassName] = useState('暫無訓練的數據')
   // 判定結果的列
   // const className = 'liked'
 
@@ -191,7 +191,7 @@ export default function Home () {
             樣本準確性: {accuracy * 100}%
           </h3>
           <h3 className='text-xl font-bold pb-10'>
-            樣本標籤列:點擊可去除該選擇的表前列
+            樣本標籤列:點擊可去除該選擇的標籤列
             {
               features.map((item, index) => {
                 const featuresIndex = index

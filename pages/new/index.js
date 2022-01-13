@@ -25,7 +25,8 @@ export default function Home () {
   var config = {
     trainingSet: data,
     categoryAttr: 'voted',
-    ignoredAttributes: ['building_num']
+    ignoredAttributes: ['building_num'],
+    maxTreeDepth: 3
   }
 
   // Building Decision Tree
